@@ -1,5 +1,7 @@
 # CLIQ Light Controller for Garmin Edge
 
+![CLIQ Light Controller on Garmin Edge](Screenshot%202026-09-15%20at%2013.41.12.png)
+
 An independent Connect IQ controller that keeps CLIQ Bluetooth bike lights
 usable without the original mobile application, which is no longer available
 in the major app stores.
@@ -78,45 +80,3 @@ The Glance is only a lightweight launcher. It does not initialize Bluetooth or
 control the light until the full application is opened.
 
 The minimum interoperability details are documented in [PROTOCOL.md](PROTOCOL.md)
-so others can study, verify, and reuse the findings without needing proprietary
-software or raw captures.
-
-## Project structure
-
-```text
-source/                  Monkey C application source
-resources/               Strings and launcher icon
-manifest.xml             App type, permissions, and Edge 840 target
-monkey.jungle            Build configuration
-PROTOCOL.md              Minimal BLE interoperability notes
-SECURITY.md              Security and disclosure guidance
-```
-
-Generated files, debug metadata, developer keys, and local SDK state are
-intentionally excluded from version control.
-
-## Safety and limitations
-
-- Test controls while stationary before relying on them during a ride.
-- Do not interact with the screen when it would distract you from the road.
-- Confirm the physical light state; UI state may update before a BLE response.
-- Keep only the intended CLIQ light powered on and nearby while connecting.
-- Automatic synchronization depends on notifications produced by the light.
-- Third-party Glances can have firmware-specific rendering issues on Edge x40
-  devices; this does not necessarily affect the full controller.
-
-## Independent project
-
-This community project is not affiliated with, endorsed by, or supported by
-Garmin or CLIQ. Product names and trademarks belong to their respective owners.
-No original CLIQ software, firmware, artwork, keys, or proprietary assets are
-distributed here.
-
-The software is provided without warranty. Use it only with hardware you own
-or are authorized to control.
-
-## License
-
-The original source code and documentation in this repository are available
-under the [MIT License](LICENSE). The protocol values describe observed
-functional behavior and are provided for interoperability.
